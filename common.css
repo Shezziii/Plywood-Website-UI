@@ -1,0 +1,295 @@
+/* Fonts */
+
+@font-face {
+    font-family: "DalleSetFont";
+    src: url(fonts/DalleSet-Regular.ttf);
+}
+@font-face {
+    font-family: "QuanFont";
+    src: url(fonts/Fontspring-DEMO-quanprorslim-regular.ttf);
+}
+@font-face {
+    font-family: "Galette";
+    src: url(fonts/galette-med.ttf);
+}
+@font-face {
+    font-family: "Weltron";
+    src: url(fonts/Weltron\ Regular.ttf);
+}
+
+:root{
+    --font1: "DalleSetFont";
+    --font2: "QuanFont";
+    --font3: "Galette";
+    --font4: "Weltron";
+}
+
+/* Common */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+
+#main{
+    background: #837d7d61;
+    padding: 100px 0;
+}
+header{
+    padding: 15px 0;
+    background: rgba(255,255,255,0.9);
+}
+#headerId{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#menu{
+    width: 50%;
+}
+#navMenu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo{
+    width: 250px;
+}
+#navMenu >img{
+    width: 30px;
+}
+#navMenu >a{
+    text-decoration: none;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: var(--font1);
+    color: #6B352E;
+    letter-spacing: -1px;
+}
+.active{
+    border-bottom: 3px solid #6B352E;
+    padding-bottom: 5px;
+}
+
+/* Card with animations */
+
+.boards::before{
+    content: "";
+    position: absolute;
+    background: #E8B673;
+    width: 0;
+    height: 29px;
+    left: 27px;
+    transition: 1s all;
+}
+.boards{
+    width: fit-content;
+    position: relative;
+    margin: 0 10px 20px 10px;
+}
+.boards:hover:before{
+    width: 293px;
+    z-index: 0;
+}           
+.boards >h2{
+    position: relative;
+    margin-left: 40px;
+    padding-left: 20px;
+    border-bottom: 7px solid #A45B4F;
+    z-index: 1;
+    font-family: var(--font4);
+    letter-spacing: 4px;
+    font-size: 22px;
+}
+.boards >img{
+    width: 100%;
+}
+.fixCol{
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background: #E8B673;
+    left: 20px;
+    top: 0px;
+}
+
+
+/* Footer */
+
+#footer{
+    background: url("images/plywood-dark-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 80px 0 60px 0;
+    /* margin-top: -100px; */
+}
+
+#footerId{
+    display: flex;
+    justify-content: space-between;
+}
+#footerMenu{
+    display: flex;
+    flex-direction: column;
+}
+.fRows{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+#fLogo{
+    width: 200px;
+}
+#fLogoDiv{
+    width: 40%;
+}
+#footerMenu{
+    width: 30%;
+}
+#fContactDiv{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+#fLogoDiv >p{
+    color: #BEB0A7;
+    font-family: var(--font1);
+    margin: 15px 0;
+}
+#footerMenu >a{
+    font-family: var(--font1);
+    margin-bottom: 20px;
+    color: #BEB0A7;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.fRows >p{
+    color: #BEB0A7;
+    font-size: 16px;
+    font-family: var(--font1);
+}
+.fRows >img{
+    margin-right: 20px;
+}
+#topButton{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+#triangle{
+    border: 50px solid #A57B4A;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top: none;
+    rotate: 45deg;
+    margin-top: 60px;
+}
+#topButton >span{
+    position: absolute;
+    color: #A57B4A;
+    font-size: 20px;
+    font-family: var(--font1);
+    text-transform: uppercase;
+    top: 70px;
+}
+
+/* Media Query */
+
+@media screen and (max-width:1250px) {
+    
+    /* Common */
+    .wrapper{
+        width: 96%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    #fContactDiv{
+        width: 30%;
+    }
+}
+
+@media screen and (max-width:950px) {
+    .none{
+        display: none;
+    }
+    #navMenu{
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width:650px) {
+    #footerId{
+        flex-wrap: wrap;
+    }
+    #fLogoDiv{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    #footerMenu{
+        width: 40%;
+    }
+    #fContactDiv{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .boards:hover:before{
+        width: 165px;
+        height: 27px;
+    }
+    .boards >h2{
+        font-size: 17px;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #footerMenu{
+        width: 100%;
+        align-items: center;
+    }
+    #fContactDiv{
+        width: 100%;
+        align-items: center;
+    }
+    .fRows{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .fRows >img{
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    #headerId{
+        flex-direction: column;
+        align-items: center;
+    }
+    #navMenu{
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
