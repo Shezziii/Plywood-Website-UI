@@ -38,7 +38,7 @@
         overflow-x: hidden;
       }
 
-      /* ── TOP BAR ── */
+      /* TOP BAR */
       #topbar {
         background: var(--brown-dark);
         padding: 8px 40px;
@@ -67,11 +67,8 @@
         gap: 20px;
         align-items: center;
       }
-      #topbar .tb-right a {
-        font-size: 13px;
-      }
 
-      /* ── NAVBAR ── */
+      /* NAVBAR */
       #navbar {
         position: sticky;
         top: 0;
@@ -107,7 +104,6 @@
         letter-spacing: 0.14em;
         text-transform: uppercase;
       }
-
       #navLinks {
         display: flex;
         align-items: center;
@@ -135,8 +131,6 @@
       #navLinks > a.active {
         color: var(--brown-mid);
       }
-
-      /* Dropdown */
       .dropdown {
         position: relative;
       }
@@ -174,7 +168,6 @@
         background: var(--cream);
         color: var(--brown-mid);
       }
-
       #navCta {
         display: flex;
         align-items: center;
@@ -204,8 +197,6 @@
         fill: #fff;
         flex-shrink: 0;
       }
-
-      /* Hamburger */
       #navToggle {
         display: none;
         flex-direction: column;
@@ -237,8 +228,6 @@
       #navToggle.open span:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
       }
-
-      /* Mobile Menu */
       #mobileMenu {
         display: none;
         flex-direction: column;
@@ -282,7 +271,6 @@
         height: 20px;
         fill: white;
       }
-
       @media (max-width: 960px) {
         #navLinks,
         #navCta {
@@ -301,7 +289,7 @@
         }
       }
 
-      /* ── HERO SLIDER ── */
+      /* HERO */
       #hero {
         position: relative;
         overflow: hidden;
@@ -382,8 +370,6 @@
         transform: translateY(-2px);
         box-shadow: 0 8px 24px rgba(232, 182, 115, 0.45);
       }
-
-      /* Slider controls */
       .hero-dots {
         position: absolute;
         bottom: 30px;
@@ -436,7 +422,7 @@
         color: var(--brown-dark);
       }
 
-      /* ── SECTION SHARED ── */
+      /* SHARED */
       .section-pad {
         padding: 80px 0;
       }
@@ -479,7 +465,75 @@
         margin: 16px 0 28px;
       }
 
-      /* ── ABOUT ── */
+      /* CLIENTS MARQUEE — infinite seamless loop */
+      #clients {
+        background: var(--cream);
+        padding: 40px 0;
+        overflow: hidden;
+      }
+      .clients-label {
+        text-align: center;
+        font-family: var(--font-body);
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 28px;
+      }
+
+      /* The outer wrapper just hides overflow */
+      .marquee-outer {
+        overflow: hidden;
+        width: 100%;
+      }
+
+      /* The track holds TWO identical sets of items side-by-side.
+         width: max-content lets it grow as wide as its children need.
+         We animate translateX from 0 to -50% — that's exactly one set width,
+         so when it snaps back to 0 it looks seamless. */
+      .marquee-track {
+        display: flex;
+        gap: 40px;
+        width: max-content;
+        animation: marquee-loop 28s linear infinite;
+      }
+      .marquee-track:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes marquee-loop {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Each logo pill */
+      .marquee-item {
+        height: 52px;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        font-family: var(--font-display);
+        font-size: 13px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition:
+          opacity 0.25s,
+          transform 0.25s;
+        opacity: 0.75;
+        cursor: default;
+        user-select: none;
+      }
+      .marquee-item:hover {
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+
+      /* ABOUT */
       #about {
         background: var(--cream);
       }
@@ -546,7 +600,7 @@
         background: var(--brown-mid);
       }
 
-      /* Stats row */
+      /* STATS */
       .stats-bar {
         background: var(--brown-dark);
         padding: 36px 40px;
@@ -578,7 +632,7 @@
         letter-spacing: 0.1em;
       }
 
-      /* ── PRODUCTS ── */
+      /* PRODUCTS */
       #products {
         background: #fff;
       }
@@ -632,7 +686,6 @@
         font-weight: 700;
         color: var(--brown-dark);
       }
-
       .products-panel {
         display: none;
       }
@@ -690,7 +743,7 @@
         gap: 12px;
       }
 
-      /* ── TECHNOLOGY ── */
+      /* TECHNOLOGY */
       #technology {
         background: var(--cream);
       }
@@ -770,7 +823,7 @@
         font-size: 18px;
       }
 
-      /* ── SUSTAINABILITY ── */
+      /* SUSTAINABILITY */
       #sustainability {
         background: var(--brown-dark);
         padding: 80px 0;
@@ -839,7 +892,7 @@
         border-radius: 12px;
       }
 
-      /* ── PLY CALCULATOR CTA ── */
+      /* CALCULATOR CTA */
       #calculator {
         background: linear-gradient(135deg, var(--brown-mid) 0%, #7a3a30 100%);
         padding: 70px 0;
@@ -888,7 +941,7 @@
         transform: translateY(-2px);
       }
 
-      /* ── BLOG ── */
+      /* BLOG */
       #blog {
         background: #fff;
       }
@@ -967,48 +1020,7 @@
         gap: 10px;
       }
 
-      /* ── CLIENTS MARQUEE ── */
-      #clients {
-        background: var(--cream);
-        padding: 40px 0;
-        overflow: hidden;
-      }
-      .clients-label {
-        text-align: center;
-        font-family: var(--font-body);
-        font-size: 12px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: #999;
-        margin-bottom: 28px;
-      }
-      .marquee-track {
-        display: flex;
-        gap: 50px;
-        animation: marquee 22s linear infinite;
-      }
-      .marquee-track img {
-        height: 44px;
-        opacity: 0.45;
-        filter: grayscale(1);
-        transition:
-          opacity 0.3s,
-          filter 0.3s;
-      }
-      .marquee-track img:hover {
-        opacity: 1;
-        filter: none;
-      }
-      @keyframes marquee {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      /* ── FOOTER ── */
+      /* FOOTER */
       footer {
         background: var(--brown-dark);
         padding: 64px 40px 28px;
@@ -1148,7 +1160,7 @@
         color: var(--gold);
       }
 
-      /* ── MEDIA QUERIES ── */
+      /* MEDIA QUERIES */
       @media (max-width: 1024px) {
         .about-grid,
         .tech-grid,
@@ -1220,18 +1232,15 @@
           <span class="brand-main">Woodborn Ply</span>
           <span class="brand-tag">Naturally Strong, Built to Last</span>
         </a>
-
         <div id="navLinks">
           <a href="#hero" class="active">Home</a>
           <a href="#about">About Us</a>
-          <a href="#products">Products </a>
-
+          <a href="#products">Products</a>
           <a href="#technology">Technology</a>
           <a href="#sustainability">Sustainability</a>
           <a href="#blog">Blog</a>
           <a href="#footer">Contact</a>
         </div>
-
         <button id="navCta" onclick="openWhatsApp()">
           <svg viewBox="0 0 24 24">
             <path
@@ -1243,12 +1252,10 @@
           </svg>
           WhatsApp Us
         </button>
-
         <button id="navToggle" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
-
       <div id="mobileMenu">
         <a href="#hero">Home</a>
         <a href="#about">About Us</a>
@@ -1276,9 +1283,7 @@
       <div class="hero-slides" id="heroSlides">
         <div
           class="hero-slide"
-          style="
-            background-image: url(&quot;images/plywood-colorful-decorations.jpg&quot;);
-          "
+          style="background-image: url(&quot;images/background.jpg&quot;)"
         >
           <div class="hero-content container">
             <div class="hero-num">01</div>
@@ -1292,7 +1297,7 @@
         </div>
         <div
           class="hero-slide"
-          style="background-image: url(&quot;images/plywood-home.jpg&quot;)"
+          style="background-image: url(&quot;images/images2.jpg&quot;)"
         >
           <div class="hero-content container">
             <div class="hero-num">02</div>
@@ -1306,7 +1311,7 @@
         </div>
         <div
           class="hero-slide"
-          style="background-image: url(&quot;images/plywood-dark-bg.jpg&quot;)"
+          style="background-image: url(&quot;images/images1.jpeg&quot;)"
         >
           <div class="hero-content container">
             <div class="hero-num">03</div>
@@ -1330,206 +1335,70 @@
       </div>
     </section>
 
-    <!-- CLIENTS MARQUEE -->
+    <!-- CLIENTS MARQUEE — infinite circular loop -->
     <div id="clients">
       <p class="clients-label">
         Trusted by leading architects, designers &amp; builders
       </p>
-      <div style="overflow: hidden">
-        <div class="marquee-track" id="marqueeTrack">
-          <!-- Placeholder client logos — replace src with real logos -->
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #ccc;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 1
+      <div class="marquee-outer">
+        <!--
+          HOW THE LOOP WORKS:
+          - We place the SAME set of items TWICE inside .marquee-track
+          - .marquee-track has width:max-content so it grows to fit both sets
+          - CSS animates translateX(0) → translateX(-50%)
+          - At -50% we've scrolled exactly one full set → CSS resets to 0 instantly
+          - Because set-2 looks identical to set-1, the jump is invisible = seamless circle
+        -->
+        <div class="marquee-track">
+          <!-- SET 1 -->
+          <div class="marquee-item" style="background: #d4a96a; color: #5a3200">
+            Architect Co.
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #beb0a7;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 2
+          <div class="marquee-item" style="background: #beb0a7; color: #3a2e28">
+            BuildMaster
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #a45b4f;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 3
+          <div class="marquee-item" style="background: #a45b4f; color: #fff">
+            DesignHouse
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #1c1410;
-              border-radius: 6px;
-              color: #e8b673;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 4
+          <div class="marquee-item" style="background: #1c1410; color: #e8b673">
+            LuxInteriors
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #ccc;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 5
+          <div class="marquee-item" style="background: #7a9e7e; color: #fff">
+            EcoBuilders
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #beb0a7;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 6
+          <div class="marquee-item" style="background: #e8b673; color: #3a2200">
+            Craft &amp; Co.
           </div>
-          <!-- Duplicated for seamless loop -->
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #ccc;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 1
+          <div class="marquee-item" style="background: #6b7c93; color: #fff">
+            UrbanSpace
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #beb0a7;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 2
+          <div class="marquee-item" style="background: #c9956c; color: #fff">
+            Timber Guild
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #a45b4f;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 3
+          <!-- SET 2 — exact duplicate for seamless wrap -->
+          <div class="marquee-item" style="background: #d4a96a; color: #5a3200">
+            Architect Co.
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #1c1410;
-              border-radius: 6px;
-              color: #e8b673;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 4
+          <div class="marquee-item" style="background: #beb0a7; color: #3a2e28">
+            BuildMaster
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #ccc;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 5
+          <div class="marquee-item" style="background: #a45b4f; color: #fff">
+            DesignHouse
           </div>
-          <div
-            style="
-              height: 44px;
-              padding: 0 20px;
-              display: flex;
-              align-items: center;
-              background: #beb0a7;
-              border-radius: 6px;
-              color: #fff;
-              font-family: var(--font-display);
-              font-size: 13px;
-              white-space: nowrap;
-            "
-          >
-            Client 6
+          <div class="marquee-item" style="background: #1c1410; color: #e8b673">
+            LuxInteriors
+          </div>
+          <div class="marquee-item" style="background: #7a9e7e; color: #fff">
+            EcoBuilders
+          </div>
+          <div class="marquee-item" style="background: #e8b673; color: #3a2200">
+            Craft &amp; Co.
+          </div>
+          <div class="marquee-item" style="background: #6b7c93; color: #fff">
+            UrbanSpace
+          </div>
+          <div class="marquee-item" style="background: #c9956c; color: #fff">
+            Timber Guild
           </div>
         </div>
       </div>
@@ -1841,7 +1710,7 @@
       </div>
     </section>
 
-    <!-- PLY CALCULATOR CTA -->
+    <!-- CALCULATOR CTA -->
     <section id="calculator">
       <div class="container calc-inner">
         <div class="calc-text">
@@ -1934,19 +1803,15 @@
         </div>
         <div class="footer-col">
           <h4>Company</h4>
-          <a href="#about">About Us</a>
-          <a href="#products">Products</a>
-          <a href="#technology">Technology</a>
-          <a href="#sustainability">Sustainability</a>
-          <a href="#blog">Blog</a>
+          <a href="#about">About Us</a><a href="#products">Products</a
+          ><a href="#technology">Technology</a
+          ><a href="#sustainability">Sustainability</a><a href="#blog">Blog</a>
         </div>
         <div class="footer-col">
           <h4>Products</h4>
-          <a href="#products">Plywood &amp; Block Board</a>
-          <a href="#products">Doors</a>
-          <a href="#products">Prelam Plywood</a>
-          <a href="#products">MDF Boards</a>
-          <a href="#products">WPC Boards</a>
+          <a href="#products">Plywood &amp; Block Board</a
+          ><a href="#products">Doors</a><a href="#products">Prelam Plywood</a
+          ><a href="#products">MDF Boards</a><a href="#products">WPC Boards</a>
         </div>
         <div class="footer-col">
           <h4>Contact Us</h4>
@@ -1978,7 +1843,7 @@
     </footer>
 
     <script>
-      // ── WHATSAPP ──
+      // WHATSAPP
       var WA_NUMBER = "94703662466";
       function openWhatsApp(msg) {
         var message = msg || "Hi! I am interested in your plywood products.";
@@ -2008,7 +1873,7 @@
         }
       }
 
-      // ── HAMBURGER ──
+      // HAMBURGER
       var toggle = document.getElementById("navToggle");
       var mobileMenu = document.getElementById("mobileMenu");
       toggle.addEventListener("click", function () {
@@ -2023,13 +1888,12 @@
         });
       });
 
-      // ── HERO SLIDER ──
+      // HERO SLIDER
       var slides = document.getElementById("heroSlides");
       var dots = document.querySelectorAll(".hero-dot");
-      var current = 0;
-      var total = 3;
-      var autoPlay;
-
+      var current = 0,
+        total = 3,
+        autoPlay;
       function goTo(i) {
         current = (i + total) % total;
         slides.style.transform = "translateX(-" + current * 100 + "%)";
@@ -2043,7 +1907,6 @@
       function prev() {
         goTo(current - 1);
       }
-
       document
         .getElementById("heroNext")
         .addEventListener("click", function () {
@@ -2068,7 +1931,7 @@
       }
       autoPlay = setInterval(next, 5000);
 
-      // ── PRODUCTS TABS ──
+      // PRODUCTS TABS
       document.querySelectorAll(".prod-tab").forEach(function (btn) {
         btn.addEventListener("click", function () {
           var i = btn.dataset.tab;
