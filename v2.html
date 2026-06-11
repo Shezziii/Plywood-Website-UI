@@ -131,43 +131,6 @@
       #navLinks > a.active {
         color: var(--brown-mid);
       }
-      .dropdown {
-        position: relative;
-      }
-      .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: calc(100% + 4px);
-        left: 0;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 8px 32px rgba(28, 20, 16, 0.12);
-        min-width: 220px;
-        z-index: 100;
-        overflow: hidden;
-      }
-      .dropdown:hover .dropdown-menu {
-        display: block;
-      }
-      .dropdown-menu a {
-        display: block;
-        font-family: var(--font-body);
-        font-size: 14px;
-        color: var(--brown-dark);
-        text-decoration: none;
-        padding: 12px 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        transition:
-          background 0.15s,
-          color 0.15s;
-      }
-      .dropdown-menu a:last-child {
-        border-bottom: none;
-      }
-      .dropdown-menu a:hover {
-        background: var(--cream);
-        color: var(--brown-mid);
-      }
       #navCta {
         display: flex;
         align-items: center;
@@ -465,10 +428,10 @@
         margin: 16px 0 28px;
       }
 
-      /* CLIENTS MARQUEE — infinite seamless loop */
+      /* ── CERTIFICATION LOGOS MARQUEE ── */
       #clients {
         background: var(--cream);
-        padding: 40px 0;
+        padding: 44px 0;
         overflow: hidden;
       }
       .clients-label {
@@ -478,29 +441,22 @@
         letter-spacing: 0.15em;
         text-transform: uppercase;
         color: #999;
-        margin-bottom: 28px;
+        margin-bottom: 32px;
       }
-
-      /* The outer wrapper just hides overflow */
       .marquee-outer {
         overflow: hidden;
         width: 100%;
       }
-
-      /* The track holds TWO identical sets of items side-by-side.
-         width: max-content lets it grow as wide as its children need.
-         We animate translateX from 0 to -50% — that's exactly one set width,
-         so when it snaps back to 0 it looks seamless. */
       .marquee-track {
         display: flex;
-        gap: 40px;
+        align-items: center;
+        gap: 48px;
         width: max-content;
-        animation: marquee-loop 28s linear infinite;
+        animation: marquee-loop 30s linear infinite;
       }
       .marquee-track:hover {
         animation-play-state: paused;
       }
-
       @keyframes marquee-loop {
         0% {
           transform: translateX(0);
@@ -510,27 +466,44 @@
         }
       }
 
-      /* Each logo pill */
-      .marquee-item {
-        height: 52px;
-        padding: 0 24px;
+      /* Each cert badge — arch-top card like Image 1 */
+      .cert-badge {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        border-radius: 8px;
-        font-family: var(--font-display);
-        font-size: 13px;
-        white-space: nowrap;
+        justify-content: flex-end;
         flex-shrink: 0;
+        width: 88px;
+        height: 96px;
+        border: 1.5px solid #d4c5bb;
+        border-radius: 44px 44px 10px 10px; /* arch top */
+        background: #fff;
+        padding: 10px 8px 12px;
+        gap: 6px;
         transition:
-          opacity 0.25s,
-          transform 0.25s;
-        opacity: 0.75;
+          border-color 0.25s,
+          transform 0.25s,
+          box-shadow 0.25s;
         cursor: default;
         user-select: none;
       }
-      .marquee-item:hover {
-        opacity: 1;
-        transform: translateY(-2px);
+      .cert-badge:hover {
+        border-color: var(--brown-mid);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(164, 91, 79, 0.15);
+      }
+      .cert-badge svg {
+        flex-shrink: 0;
+      }
+      .cert-label {
+        font-family: var(--font-body);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #a45b4f;
+        text-align: center;
+        line-height: 1.2;
       }
 
       /* ABOUT */
@@ -1160,7 +1133,7 @@
         color: var(--gold);
       }
 
-      /* MEDIA QUERIES */
+      /* RESPONSIVE */
       @media (max-width: 1024px) {
         .about-grid,
         .tech-grid,
@@ -1199,6 +1172,13 @@
         }
         footer {
           padding: 48px 20px 24px;
+        }
+        .cert-badge {
+          width: 76px;
+          height: 84px;
+        }
+        .marquee-track {
+          gap: 32px;
         }
       }
       @media (max-width: 480px) {
@@ -1311,7 +1291,7 @@
         </div>
         <div
           class="hero-slide"
-          style="background-image: url(&quot;images/images1.jpeg&quot;)"
+          style="background-image: url(&quot;images/crousle.jpg&quot;)"
         >
           <div class="hero-content container">
             <div class="hero-num">03</div>
@@ -1335,70 +1315,656 @@
       </div>
     </section>
 
-    <!-- CLIENTS MARQUEE — infinite circular loop -->
+    <!-- CERTIFICATION LOGOS MARQUEE -->
     <div id="clients">
-      <p class="clients-label">
-        Trusted by leading architects, designers &amp; builders
-      </p>
+      <p class="clients-label">Certifications &amp; Quality Standards</p>
       <div class="marquee-outer">
-        <!--
-          HOW THE LOOP WORKS:
-          - We place the SAME set of items TWICE inside .marquee-track
-          - .marquee-track has width:max-content so it grows to fit both sets
-          - CSS animates translateX(0) → translateX(-50%)
-          - At -50% we've scrolled exactly one full set → CSS resets to 0 instantly
-          - Because set-2 looks identical to set-1, the jump is invisible = seamless circle
-        -->
         <div class="marquee-track">
           <!-- SET 1 -->
-          <div class="marquee-item" style="background: #d4a96a; color: #5a3200">
-            Architect Co.
+          <!-- ISI -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <rect
+                x="6"
+                y="6"
+                width="32"
+                height="32"
+                rx="4"
+                stroke="#a45b4f"
+                stroke-width="2"
+              />
+              <text
+                x="22"
+                y="20"
+                text-anchor="middle"
+                font-family="serif"
+                font-size="9"
+                font-weight="700"
+                fill="#a45b4f"
+              >
+                IS
+              </text>
+              <text
+                x="22"
+                y="31"
+                text-anchor="middle"
+                font-family="serif"
+                font-size="7"
+                fill="#a45b4f"
+              >
+                CERTIFIED
+              </text>
+            </svg>
+            <span class="cert-label">ISI Mark</span>
           </div>
-          <div class="marquee-item" style="background: #beb0a7; color: #3a2e28">
-            BuildMaster
+          <!-- FSC -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="16"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <path
+                d="M22 10 C16 14 12 19 14 26 C16 31 20 33 22 34 C24 33 28 31 30 26 C32 19 28 14 22 10Z"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path d="M22 10 L22 34" stroke="#a45b4f" stroke-width="1" />
+              <text
+                x="22"
+                y="40"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                font-weight="700"
+                fill="#a45b4f"
+              >
+                FSC
+              </text>
+            </svg>
+            <span class="cert-label">FSC Certified</span>
           </div>
-          <div class="marquee-item" style="background: #a45b4f; color: #fff">
-            DesignHouse
+          <!-- BWP -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.8"
+              />
+              <text
+                x="22"
+                y="19"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="10"
+                font-weight="900"
+                fill="#a45b4f"
+              >
+                BWP
+              </text>
+              <text
+                x="22"
+                y="29"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                fill="#a45b4f"
+              >
+                BOILING
+              </text>
+              <text
+                x="22"
+                y="37"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                fill="#a45b4f"
+              >
+                WATERPROOF
+              </text>
+            </svg>
+            <span class="cert-label">BWP Grade</span>
           </div>
-          <div class="marquee-item" style="background: #1c1410; color: #e8b673">
-            LuxInteriors
+          <!-- Anti-Borer -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="22"
+                cy="16"
+                r="7"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+              <path
+                d="M15 30 Q22 24 29 30"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+              <line
+                x1="12"
+                y1="12"
+                x2="32"
+                y2="32"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+            </svg>
+            <span class="cert-label">Anti-Borer</span>
           </div>
-          <div class="marquee-item" style="background: #7a9e7e; color: #fff">
-            EcoBuilders
+          <!-- Fire Retardant -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <path
+                d="M22 8 C18 14 13 18 14 25 C15 31 19 36 22 36 C25 36 29 31 30 25 C31 18 26 14 22 8Z"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M22 20 C20 23 19 26 21 29 C22 31 24 31 25 29 C26 26 24 23 22 20Z"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+            </svg>
+            <span class="cert-label">Fire Retardant</span>
           </div>
-          <div class="marquee-item" style="background: #e8b673; color: #3a2200">
-            Craft &amp; Co.
+          <!-- 2X Calibrated -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <text
+                x="22"
+                y="18"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="12"
+                font-weight="900"
+                fill="#a45b4f"
+              >
+                2X
+              </text>
+              <text
+                x="22"
+                y="29"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6.5"
+                fill="#a45b4f"
+              >
+                CALIBRATED
+              </text>
+            </svg>
+            <span class="cert-label">2X Calibrated</span>
           </div>
-          <div class="marquee-item" style="background: #6b7c93; color: #fff">
-            UrbanSpace
+          <!-- 13-Layer -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <rect
+                x="8"
+                y="10"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="15"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="20"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="25"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="30"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <text
+                x="22"
+                y="42"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                fill="#a45b4f"
+              >
+                13-LAYER
+              </text>
+            </svg>
+            <span class="cert-label">13-Layer</span>
           </div>
-          <div class="marquee-item" style="background: #c9956c; color: #fff">
-            Timber Guild
+          <!-- GLT -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <rect
+                x="6"
+                y="8"
+                width="32"
+                height="26"
+                rx="4"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <text
+                x="22"
+                y="26"
+                text-anchor="middle"
+                font-family="serif"
+                font-size="14"
+                font-weight="700"
+                fill="#a45b4f"
+              >
+                GLT
+              </text>
+            </svg>
+            <span class="cert-label">GLT Treated</span>
           </div>
-          <!-- SET 2 — exact duplicate for seamless wrap -->
-          <div class="marquee-item" style="background: #d4a96a; color: #5a3200">
-            Architect Co.
+          <!-- Moisture Proof -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <path
+                d="M22 8 C22 8 12 20 12 27 C12 33 16.5 37 22 37 C27.5 37 32 33 32 27 C32 20 22 8 22 8Z"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M16 28 Q19 25 22 28 Q25 31 28 28"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+            </svg>
+            <span class="cert-label">Moisture Proof</span>
           </div>
-          <div class="marquee-item" style="background: #beb0a7; color: #3a2e28">
-            BuildMaster
+          <!-- Eco Friendly -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <path
+                d="M22 34 C22 34 12 26 12 19 C12 15 16 12 20 14 C21 14.5 22 15 22 15 C22 15 23 14.5 24 14 C28 12 32 15 32 19 C32 26 22 34 22 34Z"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+            </svg>
+            <span class="cert-label">Eco Friendly</span>
           </div>
-          <div class="marquee-item" style="background: #a45b4f; color: #fff">
-            DesignHouse
+          <!-- SET 2 (duplicate for seamless loop) -->
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <rect
+                x="6"
+                y="6"
+                width="32"
+                height="32"
+                rx="4"
+                stroke="#a45b4f"
+                stroke-width="2"
+              />
+              <text
+                x="22"
+                y="20"
+                text-anchor="middle"
+                font-family="serif"
+                font-size="9"
+                font-weight="700"
+                fill="#a45b4f"
+              >
+                IS
+              </text>
+              <text
+                x="22"
+                y="31"
+                text-anchor="middle"
+                font-family="serif"
+                font-size="7"
+                fill="#a45b4f"
+              >
+                CERTIFIED
+              </text>
+            </svg>
+            <span class="cert-label">ISI Mark</span>
           </div>
-          <div class="marquee-item" style="background: #1c1410; color: #e8b673">
-            LuxInteriors
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="16"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <path
+                d="M22 10 C16 14 12 19 14 26 C16 31 20 33 22 34 C24 33 28 31 30 26 C32 19 28 14 22 10Z"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path d="M22 10 L22 34" stroke="#a45b4f" stroke-width="1" />
+              <text
+                x="22"
+                y="40"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                font-weight="700"
+                fill="#a45b4f"
+              >
+                FSC
+              </text>
+            </svg>
+            <span class="cert-label">FSC Certified</span>
           </div>
-          <div class="marquee-item" style="background: #7a9e7e; color: #fff">
-            EcoBuilders
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.8"
+              />
+              <text
+                x="22"
+                y="19"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="10"
+                font-weight="900"
+                fill="#a45b4f"
+              >
+                BWP
+              </text>
+              <text
+                x="22"
+                y="29"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                fill="#a45b4f"
+              >
+                BOILING
+              </text>
+              <text
+                x="22"
+                y="37"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                fill="#a45b4f"
+              >
+                WATERPROOF
+              </text>
+            </svg>
+            <span class="cert-label">BWP Grade</span>
           </div>
-          <div class="marquee-item" style="background: #e8b673; color: #3a2200">
-            Craft &amp; Co.
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="22"
+                cy="16"
+                r="7"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+              <path
+                d="M15 30 Q22 24 29 30"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+              <line
+                x1="12"
+                y1="12"
+                x2="32"
+                y2="32"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+            </svg>
+            <span class="cert-label">Anti-Borer</span>
           </div>
-          <div class="marquee-item" style="background: #6b7c93; color: #fff">
-            UrbanSpace
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <path
+                d="M22 8 C18 14 13 18 14 25 C15 31 19 36 22 36 C25 36 29 31 30 25 C31 18 26 14 22 8Z"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M22 20 C20 23 19 26 21 29 C22 31 24 31 25 29 C26 26 24 23 22 20Z"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+            </svg>
+            <span class="cert-label">Fire Retardant</span>
           </div>
-          <div class="marquee-item" style="background: #c9956c; color: #fff">
-            Timber Guild
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <text
+                x="22"
+                y="18"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="12"
+                font-weight="900"
+                fill="#a45b4f"
+              >
+                2X
+              </text>
+              <text
+                x="22"
+                y="29"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6.5"
+                fill="#a45b4f"
+              >
+                CALIBRATED
+              </text>
+            </svg>
+            <span class="cert-label">2X Calibrated</span>
+          </div>
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <rect
+                x="8"
+                y="10"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="15"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="20"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="25"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <rect
+                x="8"
+                y="30"
+                width="28"
+                height="3"
+                rx="1"
+                stroke="#a45b4f"
+                stroke-width="1.2"
+                fill="none"
+              />
+              <text
+                x="22"
+                y="42"
+                text-anchor="middle"
+                font-family="sans-serif"
+                font-size="6"
+                fill="#a45b4f"
+              >
+                13-LAYER
+              </text>
+            </svg>
+            <span class="cert-label">13-Layer</span>
+          </div>
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <rect
+                x="6"
+                y="8"
+                width="32"
+                height="26"
+                rx="4"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <text
+                x="22"
+                y="26"
+                text-anchor="middle"
+                font-family="serif"
+                font-size="14"
+                font-weight="700"
+                fill="#a45b4f"
+              >
+                GLT
+              </text>
+            </svg>
+            <span class="cert-label">GLT Treated</span>
+          </div>
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <path
+                d="M22 8 C22 8 12 20 12 27 C12 33 16.5 37 22 37 C27.5 37 32 33 32 27 C32 20 22 8 22 8Z"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M16 28 Q19 25 22 28 Q25 31 28 28"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+            </svg>
+            <span class="cert-label">Moisture Proof</span>
+          </div>
+          <div class="cert-badge">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+              <circle
+                cx="22"
+                cy="22"
+                r="17"
+                stroke="#a45b4f"
+                stroke-width="1.5"
+              />
+              <path
+                d="M22 34 C22 34 12 26 12 19 C12 15 16 12 20 14 C21 14.5 22 15 22 15 C22 15 23 14.5 24 14 C28 12 32 15 32 19 C32 26 22 34 22 34Z"
+                stroke="#a45b4f"
+                stroke-width="1.3"
+                fill="none"
+              />
+            </svg>
+            <span class="cert-label">Eco Friendly</span>
           </div>
         </div>
       </div>
@@ -1408,7 +1974,7 @@
     <section id="about" class="section-pad">
       <div class="container about-grid">
         <div class="about-img">
-          <img src="images/plywood-home.jpg" alt="About Woodborn Ply" />
+          <img src="images/warhouse.avif" alt="About Woodborn Ply" />
           <div class="about-badge"><span>10+</span> Years of Trust</div>
         </div>
         <div class="about-text">
@@ -1468,105 +2034,138 @@
           <div class="products-nav">
             <button class="prod-tab active" data-tab="0">
               <span class="tab-num">01</span
-              ><span class="tab-name">Plywood &amp; Block Board</span>
+              ><span class="tab-name">Premium Plywood</span>
             </button>
             <button class="prod-tab" data-tab="1">
-              <span class="tab-num">02</span><span class="tab-name">Doors</span>
+              <span class="tab-num">02</span
+              ><span class="tab-name">Commercial Plywood</span>
             </button>
             <button class="prod-tab" data-tab="2">
               <span class="tab-num">03</span
-              ><span class="tab-name">Prelam Plywood</span>
+              ><span class="tab-name">Waterproof Plywood</span>
             </button>
             <button class="prod-tab" data-tab="3">
-              <span class="tab-num">04</span><span class="tab-name">MDF</span>
+              <span class="tab-num">04</span
+              ><span class="tab-name">Marine Plywood</span>
             </button>
             <button class="prod-tab" data-tab="4">
               <span class="tab-num">05</span
-              ><span class="tab-name">WPC Boards</span>
+              ><span class="tab-name">Block Board</span>
+            </button>
+            <button class="prod-tab" data-tab="5">
+              <span class="tab-num">06</span
+              ><span class="tab-name">Flush Doors</span>
             </button>
           </div>
           <div>
+            <!-- Panel 0: Premium Plywood -->
             <div class="products-panel active" data-panel="0">
               <div class="prod-img">
-                <img src="images/shutter-board.jpg" alt="Plywood" />
+                <img src="images/premium_plywood.jpeg" alt="Premium Plywood" />
               </div>
               <div class="prod-info">
-                <h3>Plywood &amp; Block Board</h3>
+                <h3>Premium Plywood</h3>
                 <div class="gold-line" style="margin: 0 0 10px"></div>
                 <p>
-                  Woodborn Plywood presents a wide range of product choices for
-                  the discerning customer. Our plywood range is made with the
-                  finest quality timber and produced with precision engineering
-                  backed by eco-conscious manufacturing processes. Available in
-                  multiple grades and thicknesses.
+                  Our flagship plywood is crafted from the finest quality timber
+                  veneers, precision-engineered for superior strength and
+                  finish. Ideal for high-end furniture, cabinetry, and interior
+                  panelling. Available in multiple grades and thicknesses, with
+                  a smooth surface ready for lamination or polish.
                 </p>
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
+            <!-- Panel 1: Commercial Plywood -->
             <div class="products-panel" data-panel="1">
               <div class="prod-img">
-                <img src="images/hard-board.jpg" alt="Doors" />
+                <img
+                  src="images/commercial_plywood.avif"
+                  alt="Commercial Plywood"
+                />
               </div>
               <div class="prod-info">
-                <h3>Doors</h3>
+                <h3>Commercial Plywood</h3>
                 <div class="gold-line" style="margin: 0 0 10px"></div>
                 <p>
-                  Made with premium BWP Grade phenol formaldehyde resin for
-                  superior durability. 100% calibrated for uniform thickness,
-                  ensuring better load distribution. Resilient to temperature
-                  fluctuations, moisture, and daily wear. Available in flush and
-                  panel designs.
+                  Built for everyday applications where cost-effectiveness meets
+                  reliable performance. Woodborn Commercial Plywood is ideal for
+                  general construction, packing, false ceilings, and partitions.
+                  Available in standard sizes with consistent thickness and
+                  strong inter-layer bonding.
                 </p>
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
+            <!-- Panel 2: Waterproof Plywood -->
             <div class="products-panel" data-panel="2">
               <div class="prod-img">
-                <img src="images/mdf-melamine.jpg" alt="Prelam Plywood" />
+                <img src="images/waterproof.webp" alt="Waterproof Plywood" />
               </div>
               <div class="prod-info">
-                <h3>Prelam Plywood</h3>
+                <h3>Waterproof Plywood (BWP/BWR)</h3>
                 <div class="gold-line" style="margin: 0 0 10px"></div>
                 <p>
-                  Woodborn Prelam Plywood offers a diverse range of
-                  pre-laminated plywood designs, ensuring aesthetic appeal and
-                  functionality for various interior and architectural
-                  applications. Our collection features beautiful textures,
-                  patterns and finishes to suit any décor.
+                  Engineered with Boiling Water Proof (BWP) and Boiling Water
+                  Resistant (BWR) phenol formaldehyde resin for maximum moisture
+                  resistance. Perfect for kitchens, bathrooms, and outdoor
+                  applications where exposure to water or humidity is a constant
+                  challenge.
                 </p>
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
+            <!-- Panel 3: Marine Plywood -->
             <div class="products-panel" data-panel="3">
               <div class="prod-img">
-                <img src="images/eco-sheet.jpg" alt="MDF" />
+                <img src="images/marine_plywood.jpeg" alt="Marine Plywood" />
               </div>
               <div class="prod-info">
-                <h3>MDF Boards</h3>
+                <h3>Marine Plywood</h3>
                 <div class="gold-line" style="margin: 0 0 10px"></div>
                 <p>
-                  High Density Xtreme Moisture Resistant (HDXMR). When moisture
-                  strikes and pressure builds — Woodborn MDF endures. Built with
-                  high-density bonding and advanced moisture-proof technology,
-                  it's your ultimate performance partner for kitchens, bathrooms
-                  and high-humidity spaces.
+                  The ultimate choice for extreme moisture environments.
+                  Woodborn Marine Plywood is manufactured with void-free core
+                  veneers and 100% waterproof adhesive, conforming to
+                  international marine-grade standards. Ideal for boats, docks,
+                  humid outdoor structures, and coastal construction.
                 </p>
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
+            <!-- Panel 4: Block Board -->
             <div class="products-panel" data-panel="4">
               <div class="prod-img">
-                <img src="images/pvc-board.jpg" alt="WPC" />
+                <img src="images/blockboard.jpeg" alt="Block Board" />
               </div>
               <div class="prod-info">
-                <h3>WPC Boards</h3>
+                <h3>Block Board</h3>
                 <div class="gold-line" style="margin: 0 0 10px"></div>
                 <p>
-                  WPC boards are a blend of wood fibre and thermoplastics,
-                  offering the best of both worlds — the look of wood with the
-                  durability of plastic. Termite-proof, water-resistant, and
-                  extremely low maintenance. Also available in door and frame
-                  formats.
+                  Constructed with a solid timber core sandwiched between
+                  high-quality veneer sheets, Woodborn Block Board offers
+                  exceptional rigidity and screw-holding strength. The go-to
+                  choice for doors, shelving, tabletops, and long-span
+                  applications where sag resistance is critical.
+                </p>
+                <a href="#" class="prod-link">View Product Details →</a>
+              </div>
+            </div>
+            <!-- Panel 5: Flush Doors -->
+            <div class="products-panel" data-panel="5">
+              <div class="prod-img">
+                <img src="images/flushdoor.jpg" alt="Flush Doors" />
+              </div>
+              <div class="prod-info">
+                <h3>Flush Doors</h3>
+                <div class="gold-line" style="margin: 0 0 10px"></div>
+                <p>
+                  Woodborn Flush Doors combine a solid or hollow timber core
+                  with premium face veneers for a sleek, flat finish. 100%
+                  calibrated for uniform thickness, ensuring perfect fit and
+                  long-lasting performance. Available in solid core, hollow
+                  core, and fire-rated variants for residential and commercial
+                  use.
                 </p>
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
@@ -1641,10 +2240,7 @@
             </div>
           </div>
           <div class="tech-img">
-            <img
-              src="images/plywood-colorful-decorations.jpg"
-              alt="Manufacturing Process"
-            />
+            <img src="images/tech.avif" alt="Manufacturing Process" />
             <div class="tech-badge">Lifetime Guarantee — Built to Last</div>
           </div>
         </div>
@@ -1738,7 +2334,7 @@
         <div class="blog-grid">
           <div class="blog-card">
             <div class="blog-img">
-              <img src="images/shutter-board.jpg" alt="Blog 1" />
+              <img src="images/premium_plywood.jpeg" alt="Blog 1" />
             </div>
             <div class="blog-body">
               <div class="blog-meta">
@@ -1753,7 +2349,7 @@
           </div>
           <div class="blog-card">
             <div class="blog-img">
-              <img src="images/eco-sheet.jpg" alt="Blog 2" />
+              <img src="images/waterproof.webp" alt="Blog 2" />
             </div>
             <div class="blog-body">
               <div class="blog-meta">
@@ -1769,7 +2365,7 @@
           </div>
           <div class="blog-card">
             <div class="blog-img">
-              <img src="images/mdf-melamine.jpg" alt="Blog 3" />
+              <img src="images/commercial_plywood.avif" alt="Blog 3" />
             </div>
             <div class="blog-body">
               <div class="blog-meta">
@@ -1794,7 +2390,7 @@
           <span class="brand-tag">Naturally Strong, Built to Last</span>
           <p>
             Woodborn Ply stands as a name associated with strength, reliability,
-            and design excellence in Sri Lanka.
+            and design excellence in India.
           </p>
           <div class="footer-socials">
             <a href="https://facebook.com" target="_blank" title="Facebook"
@@ -1814,13 +2410,20 @@
         </div>
         <div class="footer-col">
           <h4>Products</h4>
-          <a href="#products">Plywood &amp; Block Board</a
-          ><a href="#products">Doors</a><a href="#products">Prelam Plywood</a
-          ><a href="#products">MDF Boards</a><a href="#products">WPC Boards</a>
+          <a href="#products">Premium Plywood</a>
+          <a href="#products">Commercial Plywood</a>
+          <a href="#products">Waterproof Plywood</a>
+          <a href="#products">Marine Plywood</a>
+          <a href="#products">Block Board</a>
+          <a href="#products">Flush Doors</a>
         </div>
         <div class="footer-col">
           <h4>Contact Us</h4>
-          <p>📍 No 300/3, Kadawatha–Ganemulla Rd,<br />Ganemulla, Sri Lanka</p>
+
+          <p>
+            📍 426, MIG Flats Near Army Apartments, Phase-3, Urban Estate,<br />Dugri,
+            Ludhiana- 141013 India
+          </p>
           <p style="margin-top: 10px">📞 070 366 2466</p>
           <p>📱 074 150 2503</p>
           <p>✉ info@woodbornply.com</p>
@@ -1848,7 +2451,6 @@
     </footer>
 
     <script>
-      // WHATSAPP
       var WA_NUMBER = "94703662466";
       function openWhatsApp(msg) {
         var message = msg || "Hi! I am interested in your plywood products.";
@@ -1877,8 +2479,6 @@
           );
         }
       }
-
-      // HAMBURGER
       var toggle = document.getElementById("navToggle");
       var mobileMenu = document.getElementById("mobileMenu");
       toggle.addEventListener("click", function () {
@@ -1892,8 +2492,6 @@
           toggle.classList.remove("open");
         });
       });
-
-      // HERO SLIDER
       var slides = document.getElementById("heroSlides");
       var dots = document.querySelectorAll(".hero-dot");
       var current = 0,
@@ -1906,22 +2504,16 @@
           d.classList.toggle("active", idx === current);
         });
       }
-      function next() {
-        goTo(current + 1);
-      }
-      function prev() {
-        goTo(current - 1);
-      }
       document
         .getElementById("heroNext")
         .addEventListener("click", function () {
-          next();
+          goTo(current + 1);
           resetAuto();
         });
       document
         .getElementById("heroPrev")
         .addEventListener("click", function () {
-          prev();
+          goTo(current - 1);
           resetAuto();
         });
       dots.forEach(function (d) {
@@ -1932,11 +2524,13 @@
       });
       function resetAuto() {
         clearInterval(autoPlay);
-        autoPlay = setInterval(next, 5000);
+        autoPlay = setInterval(function () {
+          goTo(current + 1);
+        }, 5000);
       }
-      autoPlay = setInterval(next, 5000);
-
-      // PRODUCTS TABS
+      autoPlay = setInterval(function () {
+        goTo(current + 1);
+      }, 5000);
       document.querySelectorAll(".prod-tab").forEach(function (btn) {
         btn.addEventListener("click", function () {
           var i = btn.dataset.tab;
