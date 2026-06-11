@@ -428,7 +428,7 @@
         margin: 16px 0 28px;
       }
 
-      /* ── CERTIFICATION LOGOS MARQUEE ── */
+      /* MARQUEE */
       #clients {
         background: var(--cream);
         padding: 44px 0;
@@ -865,7 +865,7 @@
         border-radius: 12px;
       }
 
-      /* CALCULATOR CTA */
+      /* CALCULATOR */
       #calculator {
         background: linear-gradient(135deg, var(--brown-mid) 0%, #7a3a30 100%);
         padding: 70px 0;
@@ -1719,7 +1719,7 @@
             <span class="cert-label">Anti-Borer</span>
           </div>
           <div class="cert-badge">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+            <svg width="44" height="48" viewBox="0 0 44 44" fill="none">
               <path
                 d="M22 8 C18 14 13 18 14 25 C15 31 19 36 22 36 C25 36 29 31 30 25 C31 18 26 14 22 8Z"
                 stroke="#a45b4f"
@@ -1735,7 +1735,6 @@
             </svg>
             <span class="cert-label">Fire Retardant</span>
           </div>
-
           <div class="cert-badge">
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
               <rect
@@ -1943,7 +1942,6 @@
             </button>
           </div>
           <div>
-            <!-- Panel 0: Premium Plywood -->
             <div class="products-panel active" data-panel="0">
               <div class="prod-img">
                 <img src="images/premium_plywood.jpeg" alt="Premium Plywood" />
@@ -1961,7 +1959,6 @@
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
-            <!-- Panel 1: Commercial Plywood -->
             <div class="products-panel" data-panel="1">
               <div class="prod-img">
                 <img
@@ -1982,7 +1979,6 @@
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
-            <!-- Panel 2: Waterproof Plywood -->
             <div class="products-panel" data-panel="2">
               <div class="prod-img">
                 <img src="images/waterproof.webp" alt="Waterproof Plywood" />
@@ -2000,7 +1996,6 @@
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
-            <!-- Panel 3: Marine Plywood -->
             <div class="products-panel" data-panel="3">
               <div class="prod-img">
                 <img src="images/marine_plywood.jpeg" alt="Marine Plywood" />
@@ -2018,7 +2013,6 @@
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
-            <!-- Panel 4: Block Board -->
             <div class="products-panel" data-panel="4">
               <div class="prod-img">
                 <img src="images/blockboard.jpeg" alt="Block Board" />
@@ -2036,7 +2030,6 @@
                 <a href="#" class="prod-link">View Product Details →</a>
               </div>
             </div>
-            <!-- Panel 5: Flush Doors -->
             <div class="products-panel" data-panel="5">
               <div class="prod-img">
                 <img src="images/flushdoor.jpg" alt="Flush Doors" />
@@ -2058,6 +2051,275 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- PRODUCT SHOWCASE -->
+    <section
+      id="showcase"
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        overflow: hidden;
+        margin: auto;
+        min-height: 100vh;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: row-reverse;
+          width: 100%;
+          min-height: 520px;
+        "
+      >
+        <!-- Image -->
+        <div style="flex: 1; overflow: hidden; position: relative">
+          <img
+            src="images/clipped2 (1).jpeg"
+            alt="Doors"
+            style="width: 100%; height: 100%; object-fit: cover; display: block"
+          />
+        </div>
+        <!-- Info -->
+        <div
+          style="
+            flex: 1;
+            background: #f5f0eb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 56px;
+            gap: 20px;
+          "
+        >
+          <div
+            style="
+              font-family: &quot;Cinzel&quot;, serif;
+              font-size: 72px;
+              font-weight: 700;
+              color: rgba(28, 20, 16, 0.05);
+              line-height: 1;
+              margin-bottom: -16px;
+            "
+          >
+            02
+          </div>
+          <h3
+            style="
+              font-family: &quot;Cinzel&quot;, serif;
+              font-size: clamp(22px, 3vw, 34px);
+              color: #1c1410;
+              line-height: 1.2;
+              margin: 0;
+            "
+          >
+            Doors
+          </h3>
+          <div
+            style="
+              width: 50px;
+              height: 3px;
+              background: linear-gradient(90deg, #fcc90c, #e8b673);
+              border-radius: 2px;
+            "
+          ></div>
+          <p
+            style="
+              font-family: &quot;Lato&quot;, sans-serif;
+              font-size: 15px;
+              color: #555;
+              line-height: 1.8;
+              margin: 0;
+            "
+          >
+            Made with premium BWP Grade phenol formaldehyde resin for superior
+            durability. 100% calibrated for uniform thickness ensuring better
+            load distribution. Made from full block New Zealand pine with
+            superior screw and nail holding capacity. Resilient to temperature
+            fluctuations.
+          </p>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              margin-top: 8px;
+            "
+          >
+            <div
+              style="flex: 1; height: 1px; background: rgba(28, 20, 16, 0.15)"
+            ></div>
+            <button
+              onclick="
+                document
+                  .querySelector('#products')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+              style="
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: #a45b4f;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                transition: background 0.2s;
+              "
+              onmouseover="this.style.background = '#1c1410'"
+              onmouseout="this.style.background = '#a45b4f'"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="19" x2="19" y2="5" />
+                <polyline points="5 5 19 5 19 19" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Item 01 -->
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          min-height: 520px;
+        "
+      >
+        <!-- Image -->
+        <div style="flex: 1; overflow: hidden; position: relative">
+          <img
+            src="images/clliped (1).jpeg"
+            alt="Plywood &amp; Block Board"
+            style="width: 100%; height: 100%; object-fit: cover; display: block"
+          />
+        </div>
+        <!-- Info -->
+        <div
+          style="
+            flex: 1;
+            background: #1c1410;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 56px;
+            gap: 20px;
+          "
+        >
+          <div
+            style="
+              font-family: &quot;Cinzel&quot;, serif;
+              font-size: 72px;
+              font-weight: 700;
+              color: rgba(255, 255, 255, 0.06);
+              line-height: 1;
+              margin-bottom: -16px;
+            "
+          >
+            01
+          </div>
+          <h3
+            style="
+              font-family: &quot;Cinzel&quot;, serif;
+              font-size: clamp(22px, 3vw, 34px);
+              color: #fff;
+              line-height: 1.2;
+              margin: 0;
+            "
+          >
+            Plywood &amp; Block Board
+          </h3>
+          <div
+            style="
+              width: 50px;
+              height: 3px;
+              background: linear-gradient(90deg, #fcc90c, #e8b673);
+              border-radius: 2px;
+            "
+          ></div>
+          <p
+            style="
+              font-family: &quot;Lato&quot;, sans-serif;
+              font-size: 15px;
+              color: rgba(255, 255, 255, 0.65);
+              line-height: 1.8;
+              margin: 0;
+            "
+          >
+            Woodborn Ply, available in the form of Panels and Blockboard,
+            presents a wide range of product choice for the discerning customer.
+            Our range is made with the finest quality Gurjan timber and produced
+            with precision engineering backed by eco-conscious manufacturing
+            processes.
+          </p>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 16px;
+              margin-top: 8px;
+            "
+          >
+            <div
+              style="
+                flex: 1;
+                height: 1px;
+                background: rgba(255, 255, 255, 0.15);
+              "
+            ></div>
+            <button
+              onclick="
+                document
+                  .querySelector('#products')
+                  .scrollIntoView({ behavior: 'smooth' })
+              "
+              style="
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: #a45b4f;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                transition: background 0.2s;
+              "
+              onmouseover="this.style.background = '#e8b673'"
+              onmouseout="this.style.background = '#a45b4f'"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="5" y1="19" x2="19" y2="5" />
+                <polyline points="5 5 19 5 19 19" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 02 — reversed -->
     </section>
 
     <!-- TECHNOLOGY -->
@@ -2191,7 +2453,7 @@
       </div>
     </section>
 
-    <!-- CALCULATOR CTA -->
+    <!-- CALCULATOR -->
     <section id="calculator">
       <div class="container calc-inner">
         <div class="calc-text">
@@ -2278,13 +2540,9 @@
             and design excellence in India.
           </p>
           <div class="footer-socials">
-            <a href="https://facebook.com" target="_blank" title="Facebook"
-              >f</a
-            >
-            <a href="https://instagram.com" target="_blank" title="Instagram"
-              >in</a
-            >
-            <a href="https://youtube.com" target="_blank" title="YouTube">▶</a>
+            <a href="https://facebook.com" target="_blank">f</a>
+            <a href="https://instagram.com" target="_blank">in</a>
+            <a href="https://youtube.com" target="_blank">▶</a>
           </div>
         </div>
         <div class="footer-col">
@@ -2295,16 +2553,15 @@
         </div>
         <div class="footer-col">
           <h4>Products</h4>
-          <a href="#products">Premium Plywood</a>
-          <a href="#products">Commercial Plywood</a>
-          <a href="#products">Waterproof Plywood</a>
-          <a href="#products">Marine Plywood</a>
-          <a href="#products">Block Board</a>
-          <a href="#products">Flush Doors</a>
+          <a href="#products">Premium Plywood</a
+          ><a href="#products">Commercial Plywood</a
+          ><a href="#products">Waterproof Plywood</a
+          ><a href="#products">Marine Plywood</a
+          ><a href="#products">Block Board</a
+          ><a href="#products">Flush Doors</a>
         </div>
         <div class="footer-col">
           <h4>Contact Us</h4>
-
           <p>
             📍 426, MIG Flats Near Army Apartments, Phase-3, Urban Estate,<br />Dugri,
             Ludhiana- 141013 India
