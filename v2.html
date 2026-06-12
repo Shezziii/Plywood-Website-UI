@@ -2054,159 +2054,124 @@
     </section>
 
     <!-- PRODUCT SHOWCASE -->
-    <section
-      id="showcase"
-      style="
-        display: flex;
-        flex-direction: column;
-        width: 65%;
-        overflow: hidden;
-        margin: auto;
-        min-height: 100vh;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-direction: row-reverse;
-          width: 100%;
-          min-height: 520px;
-        "
-      >
-        <!-- Image -->
-        <div style="flex: 1; overflow: hidden; position: relative">
-          <img
-            src="images/clipped2 (1).jpeg"
-            alt="Doors"
-            style="width: 100%; height: 100%; object-fit: cover; display: block"
-          />
-        </div>
-        <!-- Info -->
-        <div
-          style="
-            flex: 1;
-            background: #f5f0eb;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 60px 56px;
-            gap: 20px;
-          "
-        >
+    <section id="technology" class="section-pad">
+      <div class="container">
+        <div class="tech-grid">
           <div
             style="
-              font-family: &quot;Cinzel&quot;, serif;
-              font-size: 72px;
-              font-weight: 700;
-              color: rgba(28, 20, 16, 0.05);
-              line-height: 1;
-              margin-bottom: -16px;
-            "
-          >
-            02
-          </div>
-          <h3
-            style="
-              font-family: &quot;Cinzel&quot;, serif;
-              font-size: clamp(22px, 3vw, 34px);
-              color: #1c1410;
-              line-height: 1.2;
-              margin: 0;
-            "
-          >
-            Doors
-          </h3>
-          <div
-            style="
-              width: 50px;
-              height: 3px;
-              background: linear-gradient(90deg, #fcc90c, #e8b673);
-              border-radius: 2px;
-            "
-          ></div>
-          <p
-            style="
-              font-family: &quot;Lato&quot;, sans-serif;
-              font-size: 15px;
-              color: #555;
-              line-height: 1.8;
-              margin: 0;
-            "
-          >
-            Made with premium BWP Grade phenol formaldehyde resin for superior
-            durability. 100% calibrated for uniform thickness ensuring better
-            load distribution. Made from full block New Zealand pine with
-            superior screw and nail holding capacity. Resilient to temperature
-            fluctuations.
-          </p>
-          <div
-            style="
+              flex: 1;
+              background: #f5f0eb;
               display: flex;
-              align-items: center;
-              gap: 16px;
-              margin-top: 8px;
+              flex-direction: column;
+              justify-content: center;
+              padding: 60px 56px;
+              gap: 20px;
             "
           >
             <div
-              style="flex: 1; height: 1px; background: rgba(28, 20, 16, 0.15)"
-            ></div>
-            <button
-              onclick="
-                document
-                  .querySelector('#products')
-                  .scrollIntoView({ behavior: 'smooth' })
-              "
               style="
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                background: #a45b4f;
-                border: none;
-                cursor: pointer;
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: 72px;
+                font-weight: 700;
+                color: rgba(28, 20, 16, 0.05);
+                line-height: 1;
+                margin-bottom: -16px;
+              "
+            >
+              02
+            </div>
+            <h3
+              style="
+                font-family: &quot;Cinzel&quot;, serif;
+                font-size: clamp(22px, 3vw, 34px);
+                color: #1c1410;
+                line-height: 1.2;
+                margin: 0;
+              "
+            >
+              Doors
+            </h3>
+            <div
+              style="
+                width: 50px;
+                height: 3px;
+                background: linear-gradient(90deg, #fcc90c, #e8b673);
+                border-radius: 2px;
+              "
+            ></div>
+            <p
+              style="
+                font-family: &quot;Lato&quot;, sans-serif;
+                font-size: 15px;
+                color: #555;
+                line-height: 1.8;
+                margin: 0;
+              "
+            >
+              Made with premium BWP Grade phenol formaldehyde resin for superior
+              durability. 100% calibrated for uniform thickness ensuring better
+              load distribution. Made from full block New Zealand pine with
+              superior screw and nail holding capacity. Resilient to temperature
+              fluctuations.
+            </p>
+            <div
+              style="
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                flex-shrink: 0;
-                transition: background 0.2s;
+                gap: 16px;
+                margin-top: 8px;
               "
-              onmouseover="this.style.background = '#1c1410'"
-              onmouseout="this.style.background = '#a45b4f'"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#fff"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              <div
+                style="flex: 1; height: 1px; background: rgba(28, 20, 16, 0.15)"
+              ></div>
+              <button
+                onclick="
+                  document
+                    .querySelector('#products')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+                style="
+                  width: 48px;
+                  height: 48px;
+                  border-radius: 50%;
+                  background: #a45b4f;
+                  border: none;
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-shrink: 0;
+                  transition: background 0.2s;
+                "
+                onmouseover="this.style.background = '#1c1410'"
+                onmouseout="this.style.background = '#a45b4f'"
               >
-                <line x1="5" y1="19" x2="19" y2="5" />
-                <polyline points="5 5 19 5 19 19" />
-              </svg>
-            </button>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <line x1="5" y1="19" x2="19" y2="5" />
+                  <polyline points="5 5 19 5 19 19" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="sust-img">
+            <img src="images/clipped2 (1).jpeg" alt="Manufacturing Process" />
           </div>
         </div>
       </div>
-      <!-- Item 01 -->
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          min-height: 520px;
-        "
-      >
-        <!-- Image -->
-        <div style="flex: 1; overflow: hidden; position: relative">
-          <img
-            src="images/clliped (1).jpeg"
-            alt="Plywood &amp; Block Board"
-            style="width: 100%; height: 100%; object-fit: cover; display: block"
-          />
-        </div>
-        <!-- Info -->
+    </section>
+
+    <section id="sustainability">
+      <div class="container sust-grid">
         <div
           style="
             flex: 1;
@@ -2317,9 +2282,14 @@
             </button>
           </div>
         </div>
+        <div class="sust-img">
+          <img
+            src="images/clliped (1).jpeg"
+            alt="Sustainability"
+            style="border-radius: 12px"
+          />
+        </div>
       </div>
-
-      <!-- Item 02 — reversed -->
     </section>
 
     <!-- TECHNOLOGY -->
